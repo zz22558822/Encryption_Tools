@@ -1,0 +1,62 @@
+pyinstaller -F -w -i ".\LOGO.ico" --add-data ".\LOGO.ico;img" ".\Encryption_Tools_GUI_v2.py" -n "Encryption_Tools_GUI"
+
+
+
+Pyarmor 混淆後需手動帶入:
+
+pyinstaller -F -w -i ".\LOGO.ico" ^
+--add-data ".\LOGO.ico;img" ^
+--hidden-import=ctypes ^
+--hidden-import=PyQt6 ^
+--hidden-import=PyQt6.QtWidgets ^
+--hidden-import=PyQt6.QtCore ^
+--hidden-import=PyQt6.QtGui ^
+--hidden-import=json ^
+--version-file "version.txt" ^
+".\Encryption_Tools_GUI_v2.py" -n "Encryption_Tools_GUI"
+
+
+
+
+
+python -m nuitka Encryption_Tools_GUI_v2.py ^
+  --standalone ^
+  --enable-plugin=pyqt6 ^
+  --windows-console-mode=disable ^
+  --windows-icon-from-ico=LOGO.ico ^
+  --company-name="Chek" ^
+  --product-name="Encryption_Tools_GUI" ^
+  --file-version=1.0.6 ^
+  --product-version=1.0.6 ^
+  --file-description="Encryption_Tools_GUI" ^
+  --copyright="Copyright © 2025 Chek" ^
+  --include-data-file=.\LOGO.ico=img\LOGO.ico ^
+  --output-dir=build ^
+  --remove-output
+
+
+
+
+### Nuitka 說明 ###
+
+使用前先安裝依賴
+pip install nuitka zstandard ordered-set
+
+
+N_Login.py : 你的主程式檔名。
+--standalone : 產生獨立可執行檔。
+--enable-plugin=pyqt6 : 啟用 PyQt6 支援。
+--windows-console-mode=disable : 不顯示命令列視窗（GUI程式用）。
+--windows-icon-from-ico=LOGO.ico : 指定圖示檔案。
+--include-data-file=.\LOGO.ico=img\LOGO.ico : 帶入資源使用 參數源路徑=目標路徑
+--output-dir=build : 輸出目錄（可改）。
+--remove-output : 每次編譯前先清空輸出目錄。
+
+--company-name=COMPANY_NAME : 公司名稱
+--product-name=PRODUCT_NAME : 產品名稱
+--file-version=FILE_VERSION : 檔案版本號 最多四段數字 1.0.0.0
+--product-version=PRODUCT_VERSION : 產品版本號 最多四段數字 1.0.0.0
+--file-description=FILE_DESCRIPTION : 檔案描述文字
+--copyright=COPYRIGHT_TEXT : 版權資訊文字
+--trademarks=TRADEMARK_TEXT : 商標資訊文字(少用)
+

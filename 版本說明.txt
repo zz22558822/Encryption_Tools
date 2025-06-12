@@ -1,0 +1,4 @@
+Encryption_Tools.py  --CLI版
+Encryption_Tools_GUI_Beta.py  --多選版 已棄用
+Encryption_Tools_GUI.py  --GUI版 無密碼
+Encryption_Tools_GUI_v2.py  --GUI版 新增密碼
