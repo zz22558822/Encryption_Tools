@@ -1,4 +1,4 @@
-Encryption_Tools.py  --CLI版
-Encryption_Tools_GUI_Beta.py  --多選版 已棄用
-Encryption_Tools_GUI.py  --GUI版 無密碼
-Encryption_Tools_GUI_v2.py  --GUI版 新增密碼
+Computer_Info_Core.py  --CLI版
+Computer_Info_GUI.py  --GUI版本 無美化
+Computer_Info_GUI_Dark.py  --GUI版 完整資訊 (建議此版)
+Computer_Info_GUI_Dark_Mini.py  --GUI版 簡易資訊 (建議此版)

@@ -1,4 +1,4 @@
-pyinstaller -F -w -i ".\LOGO.ico" --add-data ".\LOGO.ico;img" ".\Encryption_Tools_GUI_v2.py" -n "Encryption_Tools_GUI"
+pyinstaller -F -w -i ".\LOGO.ico" --add-data ".\LOGO.ico;img" ".\Encryption_Tools_GUI_v4.py" -n "Encryption_Tools_GUI"
 
 
 
@@ -13,14 +13,14 @@ pyinstaller -F -w -i ".\LOGO.ico" ^
 --hidden-import=PyQt6.QtGui ^
 --hidden-import=json ^
 --version-file "version.txt" ^
-".\Encryption_Tools_GUI_v2.py" -n "Encryption_Tools_GUI"
+".\Encryption_Tools_GUI_v4.py" -n "Encryption_Tools_GUI"
 
 
 
 
 
-python -m nuitka Encryption_Tools_GUI_v2.py ^
-  --standalone ^
+python -m nuitka Encryption_Tools_GUI_v4.py ^
+  --onefile ^
   --enable-plugin=pyqt6 ^
   --windows-console-mode=disable ^
   --windows-icon-from-ico=LOGO.ico ^
@@ -44,7 +44,7 @@ pip install nuitka zstandard ordered-set
 
 
 N_Login.py : 你的主程式檔名。
---standalone : 產生獨立可執行檔。
+--onefile  : 產生獨立可執行檔。
 --enable-plugin=pyqt6 : 啟用 PyQt6 支援。
 --windows-console-mode=disable : 不顯示命令列視窗（GUI程式用）。
 --windows-icon-from-ico=LOGO.ico : 指定圖示檔案。
