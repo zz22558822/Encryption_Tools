@@ -1,6 +1,6 @@
 Encryption_Tools.py  --CLI版
 Encryption_Tools_GUI_Beta.py  --多選版 已棄用
 Encryption_Tools_GUI.py  --GUI版 無密碼
-Encryption_Tools_GUI_v2.py  --GUI版 新增密碼
+Encryption_Tools_GUI_v2.py  --GUI版 新增密碼 v1.0.6
 Encryption_Tools_GUI_v3.py  --GUI版 改用雜湊值驗證檔案+紀錄 Log
-Encryption_Tools_GUI_v4.py  --GUI版 分塊讀取檔案雜湊+串流加密+效能優化
+Encryption_Tools_GUI_v4.py  --GUI版 分塊讀取檔案雜湊+串流加密+效能優化 v1.0.7

@@ -12,6 +12,9 @@ pyinstaller -F -w -i ".\LOGO.ico" ^
 --hidden-import=PyQt6.QtCore ^
 --hidden-import=PyQt6.QtGui ^
 --hidden-import=json ^
+--hidden-import=cryptography ^
+--hidden-import=cryptography.hazmat.primitives.kdf ^
+--hidden-import=cryptography.hazmat.primitives.kdf.pbkdf2 ^
 --version-file "version.txt" ^
 ".\Encryption_Tools_GUI_v4.py" -n "Encryption_Tools_GUI"
 
@@ -26,13 +29,34 @@ python -m nuitka Encryption_Tools_GUI_v4.py ^
   --windows-icon-from-ico=LOGO.ico ^
   --company-name="Chek" ^
   --product-name="Encryption_Tools_GUI" ^
-  --file-version=1.0.6 ^
-  --product-version=1.0.6 ^
-  --file-description="Encryption_Tools_GUI" ^
+  --file-version=1.0.7 ^
+  --product-version=1.0.7 ^
+  --file-description="檔案加解密工具" ^
   --copyright="Copyright © 2025 Chek" ^
   --include-data-file=.\LOGO.ico=img\LOGO.ico ^
   --output-dir=build ^
   --remove-output
+
+
+
+### 攜帶版製作 ###
+python -m nuitka Encryption_Tools_GUI_v4.py ^
+  --standalone ^
+  --enable-plugin=pyqt6 ^
+  --windows-console-mode=disable ^
+  --windows-icon-from-ico=LOGO.ico ^
+  --company-name="Chek" ^
+  --product-name="Encryption_Tools_GUI" ^
+  --file-version=1.0.7 ^
+  --product-version=1.0.7 ^
+  --file-description="檔案加解密工具" ^
+  --copyright="Copyright © 2025 Chek" ^
+  --include-data-file=.\LOGO.ico=img\LOGO.ico ^
+  --output-dir=build ^
+  --remove-output
+
+
+
 
 
 
